@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'online',
+    'csvexport',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +141,8 @@ EMAIL_HOST_USER='babitas550@gmail.com'
 EMAIL_HOST_PASSWORD=''
 EMAIL_USE_TLS=True
 EMAIL_USE_SSL=False
+
+CSV_EXPORT_REFERENCE_DEPTH = 3
+CSV_EXPORT_EMPTY_VALUE = ''
+
+# IMPORT_EXPORT_USE_TRANSACTIONS=True
