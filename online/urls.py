@@ -1,0 +1,18 @@
+from django.contrib import admin
+from django.urls import path
+from .views import *
+app_name='online'
+urlpatterns = [
+    path('', HomeView.as_view(),name='home'),
+    path('product/<slug>', ProductDetailView.as_view(),name='product'),
+    path('search',SearchView.as_view(),name='search'),
+    path('category/<slug>',CategoryView.as_view(),name='category'),
+    path('brand/<name>',BrandView.as_view(),name='brand'),
+    path('signup',Register,name='signup'),
+    path('signin',signin,name='signin'),
+    path('mycart',CartView.as_view(),name='mycart'),
+    path('add-to-cart/<slug>', cart, name='add-to-cart'),
+    path('delete-cart/<slug>', deletecart, name='delete-cart'),
+    path('delete-single-cart/<slug>', delete_single_cart, name='delete-single-cart'),
+    path('contact',contact,name='contact'),
+]

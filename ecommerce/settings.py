@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'online',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'ecommerce.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,5 +117,26 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+import os
 STATIC_URL = '/static/'
+MEDIA_URL='media/'
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,'static'),
+]
+LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL='/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# host: 'smtp.gmail.com'
+# port: 587
+# username: babitas550@gmail.com
+# password: ''
+# use_tls: True
+# use_ssl: False
+
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='babitas550@gmail.com'
+EMAIL_HOST_PASSWORD=''
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL=False
